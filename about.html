@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SheConnect - About</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+      padding-top: 80px; /* Space for fixed navbar */
+    }
+
+    /* NAVIGATION */
+  
+     .navbar {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap; /* Added to prevent overflow */
+  overflow: none;
+}
+
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo h2 {
+      color: #ff69b4;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #ff69b4;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      list-style: none;
+      position: absolute;
+      display: none;
+      background-color: #ff69b4;
+      min-width: 190px;
+      padding: 20px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      left: -20px;
+    }
+
+    .dropdown-content a {
+      color: white;
+    }
+
+    .dropdown-content li {
+      padding: 10px 20px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 10px;
+      border-radius: 6px;
+    
+    }
+
+    .btn-sign-in {
+      border: 1px solid #8A00C4;
+      color: #8A00C4;
+      padding: 5px 12px;
+    }
+
+    .btn-sign-in:hover {
+      border-color: #ff69b4;
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .btn-get-started {
+      background-color: #8A00C4;
+      color: white;
+      padding: 7px 20px;
+    }
+
+    .btn-get-started:hover {
+      background-color: #ff69b4;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-buttons {
+        display: none;
+      }
+      .navbar {
+        justify-content: center;
+      }
+    }
+
+    /* ABOUT SECTION */
+    section {
+      padding: 50px 0;
+      background-color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 40px;
+    }
+
+    .about-hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 50px 0;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .about-tag {
+      font-size: 12px;
+      color: #8A00C4;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .hero-text h1 {
+      font-size: 36px;
+      margin-top: 0;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .hero-buttons a {
+      display: inline-block;
+      padding: 10px 25px;
+      margin-right: 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: #8A00C4;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff69b4;
+    }
+
+    .btn-secondary {
+      border: 1px solid #ddd;
+      color: #333;
+    }
+
+    .btn-secondary:hover {
+      border-color: #8A00C4;
+      color: #8A00C4;
+    }
+
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 30px;
+      padding: 20px 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .stat-item h3 {
+      color: #8A00C4;
+      font-size: 30px;
+      margin: 0;
+    }
+
+    #expertise {
+      background-color: #f9f9f9;
+      padding: 80px 0;
+    }
+
+    .expertise-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .expertise-image img {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .expertise-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 30px;
+    }
+
+    .expertise-list li {
+      flex: 1 1 45%;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+
+    .expertise-list i {
+      color: #8A00C4;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero,
+      .expertise-content {
+        flex-direction: column;
+      }
+      .expertise-list li {
+        flex: 1 1 100%;
+      }
+    }
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 30px;
+    }
+
+    .role-card {
+      background-color: rgba(188,19,254,0.9);
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 250px;
+      text-align: center;
+      transition: 0.3s;
+      color: white; /* Added for readability */
+    }
+
+    .role-card:hover {
+      transform: translateY(-5px);
+    }
+     /* Roles */
+    .rolees {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 30px;
+    }
+
+    .rolee-card {
+      background-color: rgba(188,19,254,0.9);
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 250px;
+      text-align: center;
+      transition: 0.3s;
+      color: white; /* Added for readability */
+    }
+
+    .rolee-card:hover {
+      transform: translateY(-5px);
+    }
+     .roleees {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 30px;
+    }
+
+    .roleee-card {
+      background-color: rgba(188,19,254,0.9);
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 180px;
+      max-width: 250px;
+      text-align: center;
+      transition: 0.3s;
+      color: white; /* Added for readability */
+    }
+
+    .roleee-card:hover {
+      transform: translateY(-5px);
+    }
+    #rolees{
+      background-color: white;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./images/sheconnect.jpg" alt="SheConnect Logo">
+      
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mentors.html">Mentors</a></li>
+      <li><a href="mentees.html">Mentees</a></li>
+
+      <li class="dropdown">
+        <a href="#">Discover <i class="fa-solid fa-caret-down"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="progress.html">Progress</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </li>
+
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+      <a class="btn-sign-in">Sign In</a>
+      <a class="btn-get-started">Get Started</a>
+    </div>
+  </header>
+
+  <!-- ABOUT HERO -->
+  <section id="about-us">
+    <div class="container">
+      <div class="about-hero">
+        <div class="hero-text">
+          <h1>About our platform</h1>
+
+          <p>
+            SheConnect is a digital mentorship platform created by devQueens under TECH4DEV. 
+            Our mission is to empower young women by connecting them with mentors, 
+            accountability partners, and a supportive community.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn-primary">Become a Mentor <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn-secondary">Be a mentee</a>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stat-item">
+              <h3>95%</h3>
+              <p>Digital Skills</p>
+            </div>
+            <div class="stat-item">
+              <h3>10+</h3>
+              <p>Innovation, Growth and Learning</p>
+            </div>
+            <div class="stat-item">
+              <h3>2000 Thousands</h3>
+              <p>Ladies Impacted</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="images/group4_image.png" alt="About Image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE SECTION -->
+   <!-- EXPERTISE / MENTOR & MENTEE BENEFITS SECTION -->
+<section id="expertise">
+  <div class="container">
+    <div class="expertise-content">
+
+      <div class="expertise-text">
+        <span class="about-tag">MENTORSHIP</span>
+        <h2>Discover the benefits of joining SheConnect as a Mentor or Mentee</h2>
+
+        <p>
+          SheConnect connects aspiring mentees with experienced mentors for growth, guidance, and accountability.
+          Whether you are a mentor looking to share knowledge or a mentee seeking guidance, our platform
+          empowers both parties to achieve their personal and professional goals.
+        </p>
+
+        <div class="roles">
+          <div class="role-card">
+            <h4>For Mentors</h4>
+            <p>Share your expertise, expand your network, and give back to the community.</p>
+          </div>
+          <div class="role-card">
+            <h4>For Mentees</h4>
+            <p>Learn from experienced professionals, gain guidance, and accelerate your growth.</p>
+          </div>
+          <div class="role-card">
+            <h4>Networking Opportunities</h4>
+            <p>Connect with like-minded women, mentors, and industry leaders.</p>
+          </div>
+          <div class="role-card">
+            <h4>Personal Growth</h4>
+            <p>Develop skills, confidence, and actionable plans for your career journey.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div id ="roless">
+<div class="rolees">
+      <div class="rolee-card">
+        <h4>Lead Developers</h4>
+        <p>Build and maintain the platform.</p>
+      </div>
+      <div class="rolee-card">
+        <h4>UI/UX Designers</h4>
+        <p>Create functional, beautiful user experiences.</p>
+      </div>
+      <div class="rolee-card">
+        <h4>Content & Community</h4>
+        <p>Manage student resources and growth.</p>
+      </div>
+      <div class="rolee-card">
+        <h4>QA & Testing</h4>
+        <p>Ensure the platform runs smoothly and bug-free.</p>
+      </div>
+    </div>
+    <div class="roleees">
+      <div class="roleee-card">
+        <h4>Lead Developers</h4>
+        <p>Build and maintain the platform.</p>
+      </div>
+      <div class="roleee-card">
+        <h4>UI/UX Designers</h4>
+        <p>Create functional, beautiful user experiences.</p>
+      </div>
+      <div class="roleee-card">
+        <h4>Content & Community</h4>
+        <p>Manage student resources and growth.</p>
+      </div>
+      <div class="roleee-card">
+        <h4>QA & Testing</h4>
+        <p>Ensure the platform runs smoothly and bug-free.</p>
+      </div>
+    </div>
+
+  
+         <!---- <ul class="expertise-list">
+            <li><i class="fa-solid fa-circle-check"></i> Measurable proven results</li>
+            <li><i class="fa-solid fa-circle-check"></i> Innovative real solutions</li>
+            <li><i class="fa-solid fa-circle-check"></i> Customized business strategies</li>
+            <li><i class="fa-solid fa-circle-check"></i> Reliable expert guidance</li>
+            <li><i class="fa-solid fa-circle-check"></i> Multi-industry expertise</li>
+            <li><i class="fa-solid fa-circle-check"></i> Support for long-term growth</li>
+          </ul> -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Dashboard | Find a Mentor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./mentee.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar"> 
+        <div class="logo">
+            <!-- Added an image placeholder or icon for modernization -->
+            <h2>she<span>Connect</span></h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="mmentor.html" class="active-link">Find Mentors</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+        </ul> 
+        
+        <div class="nav-buttons">
+            <!-- Changed to "Log Out" since this is a logged-in page -->
+            <a href="index.html" class="btn btn-sign-in">Log Out</a>
+        </div>
+        
+        <!-- Mobile Menu Icon -->
+        <div class="bars" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="heading">
+        <h4>Welcome, Mentee!</h4>
+        <p class="sub-heading">Connect with industry experts ready to guide your journey.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="buttonArray">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">STEM</button>
+        <button class="filter-btn">Business</button>
+        <button class="filter-btn">Art</button>
+        <button class="filter-btn">Finance</button>
+    </div>
+
+    <!-- Mentors Card Display -->
+    <div class="mentorWrapper">
+        <!-- Mentor 1 -->
+        <div class="mentor">
+            <img src="./images/sheconnect_image.jpg" onerror="this.src='https://placehold.co/120x120/8A00C4/white?text=MK'" class="mentorImage" alt="Maria Kim"/>
+            <div class="mentorInfo">
+                <p class="mentorName">Maria Kim</p>
+                <span class="mentorTag">STEM</span>
+                <p class="mentorBio">Biomedical engineer passionate about mentoring young innovators.</p>
+                <button class="mentorButton open-modal-btn">CONNECT</button>
+            </div>
+        </div>
+
+        <!-- Mentor 2 -->
+        <div class="mentor">
+            <img src="./images/sheconnect_image.jpg" onerror="this.src='https://placehold.co/120x120/ff69b4/white?text=SJ'" class="mentorImage" alt="Sarah Jones"/>
+            <div class="mentorInfo">
+                <p class="mentorName">Sarah Jones</p>
+                <span class="mentorTag">Art</span>
+                <p class="mentorBio">Visual artist and creative coach guiding mentees in building careers.</p>
+                <button class="mentorButton open-modal-btn">CONNECT</button>
+            </div>
+        </div>
+
+        <!-- Mentor 3 -->
+        <div class="mentor">
+            <img src="./images/sheconnect_image.jpg" onerror="this.src='https://placehold.co/120x120/8A00C4/white?text=ML'" class="mentorImage" alt="Michael Lee"/>
+            <div class="mentorInfo">
+                <p class="mentorName">Michael Lee</p>
+                <span class="mentorTag">Business</span>
+                <p class="mentorBio">Startup strategist helping aspiring entrepreneurs scale ventures.</p>
+                <button class="mentorButton open-modal-btn">CONNECT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- General Request Button -->
+    <div class="checkAllD">
+        <p>Can't find who you're looking for?</p>
+        <button id="generalRequestBtn" class="open-modal-btn secondary-btn">Request a Mentor</button>
+    </div>
+
+    <!-- Mentor Connection Form Modal -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connect Request</h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <p class="subtitle">Send a request to start your mentorship journey.</p>
+
+            <form id="mentorForm">
+                <!-- Personal Information -->
+                <h3>Your Details</h3>
+                <div class="input-group">
+                    <input type="text" id="fullName" placeholder="Your Full Name" required>
+                </div>
+
+                <div class="two-col">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="text" id="currentRole" placeholder="Current Role (e.g. Student)">
+                </div>
+
+                <!-- Goals -->
+                <h3>Goals & Expectations</h3>
+                <div class="input-group">
+                    <select id="interest" required>
+                        <option value="" disabled selected>Area of Mentorship Needed</option>
+                        <option>STEM & Tech</option>
+                        <option>Business & Startup</option>
+                        <option>Creative Arts</option>
+                        <option>Finance & Wealth</option>
+                        <option>Personal Development</option>
+                    </select>
+                </div>
+
+                <textarea id="goals" placeholder="Hi! I'm interested in connecting because... (Describe your goals here)" required></textarea>
+
+                <!-- Availability -->
+                <div class="two-col">
+                    <div>
+                        <h3>Preferred Time</h3>
+                        <label class="check-label"><input type="checkbox" value="Weekdays"> <span>Weekdays</span></label>
+                        <label class="check-label"><input type="checkbox" value="Weekends"> <span>Weekends</span></label>
+                    </div>
+                    <div>
+                        <h3>Mode</h3>
+                        <label class="check-label"><input type="radio" name="mode" value="Virtual" checked> <span>Virtual</span></label>
+                        <label class="check-label"><input type="radio" name="mode" value="In-Person"> <span>In-Person</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functionality
+        const modal = document.getElementById("formModal");
+        const openBtns = document.querySelectorAll(".open-modal-btn");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        const form = document.getElementById("mentorForm");
+
+        // Open modal when any Connect button is clicked
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.style.display = "block";
+                // Optional: Pre-fill mentor name if clicked from a specific card
+                // logic could go here
+            });
+        });
+
+        // Close modal on X click
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal if clicking outside content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Handle Form Submit
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Request Sent Successfully! A mentor will contact you soon.");
+            modal.style.display = "none";
+            form.reset();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

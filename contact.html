@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SheConnect - Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./images/sheconnect.jpg" alt="SheConnect Logo">
+      
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mentors.html">Mentors</a></li>
+      <li><a href="mentees.html">Mentees</a></li>
+
+      <li class="dropdown">
+        <a href="#" class="drop-btn">Discover <i class="fa-solid fa-caret-down"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="progress.html">Progress</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </li>
+
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+      <a href="#" class="btn-sign-in">Sign In</a>
+      <a href="#" class="btn-get-started">Get Started</a>
+    </div>
+
+    <div class="bars"><i class="fa-solid fa-bars"></i></div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2>Get in Touch with Us</h2>
+
+    <div class="contact-wrapper">
+      <form class="contact-form">
+        
+        <div class="input-row">
+          <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Name" required>
+          </div>
+
+          <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Email" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Subject" required>
+        </div>
+
+        <div class="input-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

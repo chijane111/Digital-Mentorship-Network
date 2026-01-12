@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./mmentors.css"/>
+    <title>Find a Mentor | SheConnect</title>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar"> 
+        <div class="logo">
+            <!-- Placeholder image -->
+            <img src="./images/sheconnect.jpg" onerror="this.src='https://placehold.co/40x40/8A00C4/white?text=S'" alt="Logo">
+            <h2>She<span>Connect</span></h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="mentors.html" class="active">Mentors</a></li>
+            <li><a href="mentees.html">Mentees</a></li>
+                
+            <li class="dropdown"> 
+                <a href="#" class="drop-btn">Discover <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="Progress.html">Progress</a></li>
+                    <li><a href="network.html">Join</a></li> 
+                </ul>
+            </li>
+
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>  
+          
+        <div class="nav-buttons">
+            <a href="#" class="btn btn-sign-in">Sign In</a>
+            <a href="#" class="btn btn-get-started">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="heading">
+        <h4>Meet Our Expert Mentors</h4>
+    </div>
+
+    <div class="intro">
+        <p>Our mentors come from diverse backgrounds — from STEM to business and beyond — ready to guide you toward your goals.</p>
+    </div>
+
+    <div class="buttonArray">
+        <button>STEM</button>
+        <button>Business</button>
+        <button>Art</button>
+        <button>Finance</button>
+        <button>Personal Development</button>
+    </div>
+
+    <!-- Mentors Card Display -->
+    <div class="mentorWrapper">
+        <!-- Mentor 1 -->
+        <div class="mentor">
+            <img src="./images/sheconnect_image.jpg" onerror="this.src='https://placehold.co/120x120/png'" class="mentorImage" alt="Maria Kim"/>
+            <div class="mentorInfo">
+                <p class="mentorName">Maria Kim</p>
+                <button class="mentorButton">STEM</button>
+                <p class="mentorBio">A biomedical engineer passionate about mentoring young innovators in science and tech.</p>
+                <button class="mentorButton connect-btn">CONNECT</button>
+            </div>
+        </div>
+
+        <!-- Mentor 2 -->
+        <div class="mentor">
+            <img src="./images/sheconnect_image.jpg" onerror="this.src='https://placehold.co/120x120/png'" class="mentorImage" alt="Sarah Jones"/>
+            <div class="mentorInfo">
+                <p class="mentorName">Sarah Jones</p>
+                <button class="mentorButton">Art</button>
+                <p class="mentorBio">Visual artist and creative coach guiding mentees in building artistic careers.</p>
+                <button class="mentorButton connect-btn">CONNECT</button>
+            </div>
+        </div>
+
+        <!-- Mentor 3 -->
+        <div class="mentor">
+            <img src="./images/sheconnect_image.jpg" onerror="this.src='https://placehold.co/120x120/png'" class="mentorImage" alt="Michael Lee"/>
+            <div class="mentorInfo">
+                <p class="mentorName">Michael Lee</p>
+                <button class="mentorButton">Business</button>
+                <p class="mentorBio">Startup strategist helping aspiring entrepreneurs turn ideas into scalable ventures.</p>
+                <button class="mentorButton connect-btn">CONNECT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="checkAllD">
+        <button id="openFormBtn">Find A Mentor</button>
+    </div>
+
+    <!-- Mentor Form Modal -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Meet Our Mentors</h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <p class="subtitle">Find the perfect mentor to support your journey.</p>
+
+            <form id="mentorForm">
+                <!-- Personal Information -->
+                <h3>Personal Information</h3>
+
+                <div class="input-group">
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                </div>
+
+                <div class="two-col">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="ageGroup" placeholder="Age Group">
+                </div>
+
+                <!-- Interests / Goals -->
+                <h3>Interests / Goals</h3>
+
+                <div class="input-group">
+                    <select id="interest">
+                        <option value="">Choose an interest</option>
+                        <option>STEM</option>
+                        <option>Business</option>
+                        <option>Art</option>
+                        <option>Finance</option>
+                        <option>Personal Development</option>
+                        <option>Health</option>
+                    </select>
+                </div>
+
+                <textarea id="goals" placeholder="What do you want to learn?&#10;Short description of what you want to learn"></textarea>
+
+                <div class="input-group">
+                    <select id="mentorGender">
+                        <option value="">Preferred Mentor Gender (optional)</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>No preference</option>
+                    </select>
+                </div>
+
+                <!-- Availability & Mentorship -->
+                <div class="two-col">
+                    <!-- Left: Availability -->
+                    <div>
+                        <h3>Availability</h3>
+                        <label><input type="checkbox" value="Weekdays"> <span>Weekdays</span></label>
+                        <label><input type="checkbox" value="Weekends"> <span>Weekends</span></label>
+                        <label><input type="checkbox" value="Evening"> <span>Evening</span></label>
+                    </div>
+
+                    <!-- Right: Mentorship Preference -->
+                    <div>
+                        <h3>Mentorship Preference</h3>
+                        <label><input type="radio" name="mentorship" value="One-on-One"> <span>One-on-One</span></label>
+                        <label><input type="radio" name="mentorship" value="Group"> <span>Group</span></label>
+                        <label><input type="radio" name="mentorship" value="Either"> <span>Either</span></label>
+                    </div>
+                </div>
+
+                <!-- Experience Level -->
+                <h3>Choose Experience Level</h3>
+
+                <div class="experience-grid">
+                    <label><input type="radio" name="experience" value="Beginner mentor"> <span>Beginner mentor</span></label>
+                    <label><input type="radio" name="experience" value="Experienced mentor"> <span>Experienced mentor</span></label>
+                    <label><input type="radio" name="experience" value="Industry expert"> <span>Industry expert</span></label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Find My Mentor</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- JavaScript to Handle Modal -->
+    <script>
+        // Get elements
+        const modal = document.getElementById("formModal");
+        const btn = document.getElementById("openFormBtn");
+        const span = document.getElementsByClassName("close")[0];
+
+        // Open modal on click
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close modal on X click
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal if clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

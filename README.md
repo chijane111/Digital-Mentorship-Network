@@ -1,2 +1,2 @@
-# Digital-Mentorship-Network
-A website where Mentor and Mentees meet.
+# Digital_Mentorship_Network
+Project Topic for Group 4(Dev_Queens), Women Techsters Bootcamp Cohort 4.1
